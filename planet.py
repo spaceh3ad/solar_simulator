@@ -15,6 +15,8 @@ class Body():
         self.mass = mass
         self.radius = radius
         self.color = color
+        
+        self.tail = []
 
         self.acceleration = Vector2(0,0)
 
@@ -29,3 +31,11 @@ class Body():
 
     def draw(self):
         pygame.draw.circle(self.game.screen, self.color, (int(self.x),int(self.y)), int(self.radius))
+        self.tailor()
+        for i in self.tail:
+            pygame.draw.circle(self.game.screen, (255,255,255), i, 0)
+        
+    def tailor(self):
+        self.tail.append((int(self.x),int(self.y)))
+        if len(self.tail) > 500:
+            del self.tail[1]
