@@ -30,10 +30,10 @@ class Body():
 
 
     def draw(self):
-        pygame.draw.circle(self.game.screen, self.color, (int(self.x),int(self.y)), int(self.radius))
-        self.tailor()
         for i in self.tail:
             pygame.draw.circle(self.game.screen, (255,255,255), i, 0)
+        pygame.draw.circle(self.game.screen, self.color, (int(self.x),int(self.y)), int(self.radius))
+        self.tailor()
         
     def tailor(self):
         self.tail.append((int(self.x),int(self.y)))
