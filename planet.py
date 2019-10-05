@@ -38,4 +38,4 @@ class Body():
     def tailor(self):
         self.tail.append((int(self.x),int(self.y)))
         if len(self.tail) > 500:
-            del self.tail[1]
+            del self.tail[0]
